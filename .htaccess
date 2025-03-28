@@ -1,6 +1,6 @@
 RewriteEngine On
 RewriteBase /
 
-# Support page
-RewriteRule ^support$ support/support.html [L]
-RewriteRule ^privacy$ support/privacy.html [L] 
+# Redirect /support/ to /support/support.html
+RewriteRule ^support/?$ support/support.html [L]
+RewriteRule ^privacy/?$ support/privacy.html [L]
