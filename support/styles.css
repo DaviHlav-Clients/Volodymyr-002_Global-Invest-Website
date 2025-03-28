@@ -56,7 +56,7 @@ nav a:hover {
 
 /* Main content */
 main {
-    margin-top: 70px;
+    margin-top: 70px; /* Adjust this based on actual header height */
 }
 
 /* Hero section */
@@ -254,6 +254,14 @@ footer {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    header {
+        position: relative; /* Change from fixed to relative on mobile */
+    }
+    
+    main {
+        margin-top: 0; /* Remove margin since header is no longer fixed */
+    }
+    
     nav {
         flex-direction: column;
         gap: 1rem;
@@ -264,7 +272,7 @@ footer {
         text-align: center;
         gap: 1rem;
     }
-
+    
     .hero h1 {
         font-size: 2rem;
     }
