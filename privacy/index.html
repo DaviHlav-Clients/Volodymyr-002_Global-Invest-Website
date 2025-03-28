@@ -14,7 +14,6 @@
     <header>
         <nav>
             <div class="logo">Spark</div>
-            <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
             <ul>
                 <li><a href="/support">Support</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -100,23 +99,5 @@
             <p>&copy; 2025 Global Invest GmbH. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('nav ul');
-            
-            menuToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-            });
-            
-            // Close menu when clicking on a link
-            document.querySelectorAll('nav a').forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                });
-            });
-        });
-    </script>
 </body>
 </html> 

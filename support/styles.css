@@ -10,7 +10,6 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f5f5f5;
-    padding-top: 60px; /* Fixed height of header */
 }
 
 /* Header and Navigation */
@@ -20,18 +19,16 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    height: 60px; /* Fixed height */
     z-index: 1000;
 }
 
 nav {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
 }
 
 .logo {
@@ -57,19 +54,9 @@ nav a:hover {
     color: #FF5A5F;
 }
 
-/* Mobile menu button (hidden by default) */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #FF5A5F;
-}
-
 /* Main content */
 main {
-    margin-top: 0; /* Removed since we're using padding-top on body */
+    margin-top: 70px;
 }
 
 /* Hero section */
@@ -267,49 +254,34 @@ footer {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    /* Mobile menu */
-    .menu-toggle {
-        display: block;
+    /* Header modifications for mobile */
+    header {
+        position: static; /* Remove fixed/absolute positioning completely */
+        margin-bottom: 20px;
+    }
+    
+    nav {
+        flex-direction: column;
+        padding: 0.8rem 0.5rem;
     }
     
     nav ul {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
         flex-direction: column;
-        background-color: white;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        padding: 1rem 0;
-        gap: 0;
-        display: none; /* Hidden by default */
-    }
-    
-    nav ul.active {
-        display: flex; /* Show when active class is added */
-    }
-    
-    nav ul li {
         width: 100%;
+        gap: 0.8rem;
         text-align: center;
+        padding: 0.8rem 0;
     }
     
-    nav ul li a {
-        display: block;
-        padding: 0.75rem 0;
-    }
-    
-    /* Reset the body padding for simpler approach */
-    body {
-        padding-top: 60px; /* Just match the header height */
-    }
-    
-    /* Remove the margin-top on main that was causing issues */
+    /* Reset main margin since header is no longer fixed */
     main {
         margin-top: 0;
     }
     
-    /* Other mobile styles */
+    .hero {
+        margin-top: 0;
+    }
+    
     .hero h1 {
         font-size: 2rem;
     }
@@ -330,13 +302,8 @@ footer {
         font-size: 1.5rem;
     }
     
-    /* We don't need these band-aid fixes anymore */
-    section {
-        padding-top: 0;
-    }
-    
+    /* Remove unneeded anchor position adjustments */
     section[id]:before {
-        height: 60px;
-        margin-top: -60px;
+        display: none;
     }
 } 
