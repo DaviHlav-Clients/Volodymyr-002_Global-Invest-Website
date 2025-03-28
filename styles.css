@@ -236,4 +236,31 @@ body {
     .description {
         font-size: 1rem;
     }
+}
+
+.spark-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #64b5f6, #1976d2);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 2rem 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.spark-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #64b5f6, #0d47a1);
+}
+
+.spark-button i {
+    font-size: 1.2rem;
 } 
